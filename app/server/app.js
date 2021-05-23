@@ -8,6 +8,10 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const testRouter = require('./routes/test');
 
+const DatabaseManager = require('./lib/databaseManager');
+const database = new DatabaseManager();
+const eventManager = require('./lib/eventManager');
+
 //Initialize enviromental variables
 process.env.PORT = '9000';
 //=================================
