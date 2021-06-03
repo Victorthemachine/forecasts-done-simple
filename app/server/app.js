@@ -7,13 +7,14 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const testRouter = require('./routes/test');
+const secureRouter = require('./routes/secure');
 
 const DatabaseManager = require('./lib/databaseManager');
 const database = new DatabaseManager();
 const eventManager = require('./lib/eventManager');
 
 //Initialize enviromental variables
-process.env.PORT = '9000';
+process.env.PORT = '8000';
 //=================================
 
 const app = express();
@@ -29,10 +30,14 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, "..", "build")));
 app.use(express.static(path.join(__dirname, 'public')));
+app.get('*', function(req, res) {
+  res.sendFile('index.html', {root: path.join(__dirname, "..", "build")});
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/test', testRouter);
+app.use('/secure', secureRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

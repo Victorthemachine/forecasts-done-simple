@@ -1,0 +1,21 @@
+{
+    "plugins": [
+        [
+            "babel-plugin-styled-components",
+            {
+                "pure": true
+            }
+        ]
+    ],
+    "presets": [
+        [
+            "@babel/preset-react",
+            {
+                "pragma": "dom",
+                "pragmaFrag": "DomFrag",
+                "throwIfNamespace": false,
+                "runtime": "classic"
+            }
+        ]
+    ]
+}
