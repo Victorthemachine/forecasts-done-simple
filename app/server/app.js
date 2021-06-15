@@ -4,14 +4,13 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+const databaseManager = require('./lib/databaseManager');
+const DatabaseManager = new databaseManager();
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const testRouter = require('./routes/test');
 const secureRouter = require('./routes/secure');
-
-const DatabaseManager = require('./lib/databaseManager');
-const database = new DatabaseManager();
-const eventManager = require('./lib/eventManager');
 
 //Initialize enviromental variables
 process.env.PORT = '8000';

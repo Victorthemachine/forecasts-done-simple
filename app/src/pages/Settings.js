@@ -12,7 +12,7 @@ class Landing extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            darkmode: true
+            darkmode: localStorage.getItem('darkmode') === 'true' ? true : false
         };
         this.slideButtonHandler = this.slideButtonHandler.bind(this);
     }
@@ -21,6 +21,8 @@ class Landing extends React.Component {
     }
 
     slideButtonHandler(checked, event, id) {
+        console.log(checked);
+        localStorage.setItem('darkmode', checked);
         this.setState({ darkmode: checked });
     }
 
@@ -36,7 +38,16 @@ class Landing extends React.Component {
                                 <label>Darkmode: </label>
                             </td>
                             <td>
-                                <Switch onChange={this.slideButtonHandler} checked={this.state.darkmode} />
+                                <Switch
+                                    onChange={this.slideButtonHandler}
+                                    checked={this.state.darkmode}
+                                    onColor={'#ffb84d'}
+                                    offColor={'#d9d9d9'}
+                                    onHandleColor={'#ff8000'}
+                                    offHandleColor={'#ff8000'}
+                                    checkedIcon={false}
+                                    uncheckedIcon={false}
+                                />
                             </td>
                         </tr>
                     </table>

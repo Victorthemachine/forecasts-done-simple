@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
+import Navbar from './components/Navbar';
 import Landing from './pages/Landing';
 import Maps from './pages/Map';
 import Settings from './pages/Settings';
+
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter as Router,
@@ -14,10 +17,21 @@ import {
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
+if (localStorage.getItem('darkmode') !== 'true' && localStorage.getItem('darkmode') !== 'false') {
+  localStorage.setItem('darkmode', true);
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
+        <Navbar components={
+          {
+            "Home": "/",
+            "Maps": "/maps",
+            "Settings": "/settings",
+          }
+        } />
         <Switch>
           <Route exact path='/'>
             <Landing />

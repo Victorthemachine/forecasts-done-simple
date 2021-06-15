@@ -1,6 +1,6 @@
 {
     "openweather": {
-        "address": "api.openweathermap.org/data/2.5/weather",
+        "address": "api.openweathermap.org/data/2.5",
         "apiKey": "6160b5dbd672849f50443695247f0d9e"
     }
 }

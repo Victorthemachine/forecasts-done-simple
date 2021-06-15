@@ -18,8 +18,8 @@ module.exports = class DatabaseManager {
             }
         });
         this.db = mongoose.connection;
-        db.on('error', console.error.bind(console, 'connection error:'));
-        db.once('open', function() {
+        this.db.on('error', console.error.bind(console, 'connection error:'));
+        this.db.once('open', function() {
             // we're connected!
             this.connected = true;
         });
