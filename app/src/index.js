@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Landing from './pages/Landing';
 import Maps from './pages/Map';
 import Settings from './pages/Settings';
+import Footer from './components/Footer';
 
 import reportWebVitals from './reportWebVitals';
 import {
@@ -43,6 +44,7 @@ ReactDOM.render(
             <Settings />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </Provider>
   </React.StrictMode>,

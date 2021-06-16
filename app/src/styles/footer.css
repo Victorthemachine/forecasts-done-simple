@@ -1,0 +1,26 @@
+.mainDiv {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+}
+
+a:link {
+    color: white;
+    font-weight: bold;
+}
+
+a:visited {
+    color: white;
+    font-weight: bold;
+}
+
+a:hover {
+    color: white;
+    font-weight: bold;
+}
+
+a:active {
+    color: white;
+    font-weight: bold;
+}
